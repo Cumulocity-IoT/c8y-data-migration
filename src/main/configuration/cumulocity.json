@@ -1,0 +1,47 @@
+{
+	"apiVersion": "2",
+	"version": "@project.version@",
+	"provider": {
+		"name": "Software AG"
+	},
+	"isolation": "PER_TENANT",
+	"resources": {
+		"cpu": "@resources.cpu@",
+		"memory": "@resources.memory@"
+	},
+	"requiredRoles": [
+		"ROLE_IDENTITY_READ",
+		"ROLE_IDENTITY_ADMIN",
+		"ROLE_ALARM_READ",
+		"ROLE_ALARM_ADMIN",
+		"ROLE_EVENT_READ",
+		"ROLE_EVENT_ADMIN",
+		"ROLE_MEASUREMENT_READ",
+		"ROLE_MEASUREMENT_ADMIN",
+		"ROLE_INVENTORY_READ",
+		"ROLE_INVENTORY_CREATE",
+		"ROLE_INVENTORY_ADMIN",
+		"ROLE_OPTION_MANAGEMENT_READ"
+	],
+	"roles": [],
+	"livenessProbe": {
+		"httpGet": {
+			"path": "/health",
+			"port": 80
+		},
+		"initialDelaySeconds": 200,
+		"periodSeconds": 60,
+		"failureThreshold": 10,
+		"timeoutSeconds": 60
+	},
+	"readinessProbe": {
+		"httpGet": {
+			"path": "/health",
+			"port": 80
+		},
+		"initialDelaySeconds": 220,
+		"periodSeconds": 60,
+		"failureThreshold": 10,
+		"timeoutSeconds": 60
+	}
+}
