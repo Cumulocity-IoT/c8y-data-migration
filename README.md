@@ -37,10 +37,10 @@ Send a **POST** request to create a microservice:
     "ROLE_OPTION_MANAGEMENT_READ",
     "ROLE_OPTION_MANAGEMENT_ADMIN"
   ],
-  "contextPath": "data-migration",
+  "contextPath": "signal-migration",
   "type": "MICROSERVICE",
-  "name": "data-migration",
-  "key": "data-migration-key"
+  "name": "signal-migration",
+  "key": "signal-migration-key"
 }
 ```
 
